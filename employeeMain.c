@@ -69,5 +69,28 @@ int main(void)
 
         printf("Employee with phone '909-555-1235'  is  NOT  found  in  the  record\n");
 
+    // Salary Search
+    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 89.99);
+    printf("Testing not found with salary: \"89.99\"\n");
+
+    if (matchPtr != NULL)
+
+        printf("Employee  with salary '89.99'  is  in record  %ld\n", matchPtr - EmployeeTable);
+
+    else
+
+        printf("Employee with salary '89.99'  is  NOT  found  in  the  record\n");
+
+    matchPtr = searchEmployeeBySalary(EmployeeTable, EmployeeTableEntries, 8.78);
+    printf("Testing found with salary: \"8.78\"\n");
+
+    if (matchPtr != NULL)
+
+        printf("Employee  with salary '8.78'  is  in record  %ld\n", matchPtr - EmployeeTable);
+
+    else
+
+        printf("Employee with salary '8.78'  is  NOT  found  in  the  record\n");
+
     return EXIT_SUCCESS;
 }
