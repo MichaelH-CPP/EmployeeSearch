@@ -59,6 +59,19 @@ static int compareEmployeeByPhone(const void *targetPtr, PtrToConstEmployee tabl
     return strcmp((char *)targetPtr, tableValuePtr->phone);
 }
 
+static int compareEmployeeBySalary(const void *targetPtr, PtrToConstEmployee tableValuePtr)
+
+{
+
+    return *(double *)targetPtr != tableValuePtr->salary;
+}
+
+PtrToEmployee searchEmployeeBySalary(PtrToConstEmployee ptr, int tableSize, double salary)
+{
+
+    return searchEmployeeTable(ptr, tableSize, &salary, compareEmployeeBySalary);
+}
+
 PtrToEmployee searchEmployeeByPhone(PtrToConstEmployee ptr, int tableSize, char *targetPhone)
 {
 
